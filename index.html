@@ -191,7 +191,7 @@
                         <label for="receivername" class="form-label text-primary">ผู้รับโอน</label>
                         <input type="text" class="form-control mb-2" id="receivername" value="นาย กบ เขียด" oninput="updateDisplay()">
                         <input type="text" class="form-control mb-2" id="receiveraccount" value="XXX-X-XX142-6" oninput="updateDisplay()">
-                        <select class="form-select" id="bank" onchange="updateDisplay()">
+                        <select class="form-select" id="bank" onchange="autoFormatAccount(); updateDisplay()">
                             <option value="กสิกรไทย">ธ.กสิกรไทย</option>
                             <option value="กรุงไทย">ธ.กรุงไทย</option>
                             <option value="กรุงเทพ">ธ.กรุงเทพ</option>
@@ -386,49 +386,6 @@
 </script>
 
 <script src="js/slipktb5.js"></script>
-<script>
-  window.updateDisplay = function() {
-    const mc = document.getElementById('modeSwitch');
-    if (mc && mc.checked) {
-      if (typeof window.updateDisplayNote === 'function') window.updateDisplayNote();
-    } else {
-      if (typeof window.updateDisplayStandard === 'function') window.updateDisplayStandard();
-    }
-  };
-
-  function toggleMode() {
-    const mc = document.getElementById('modeSwitch');
-    const no = document.getElementById('noteOptions');
-    if (!mc || !no) return;
-    no.style.display = mc.checked ? 'block' : 'none';
-    if(mc.checked) syncNoteBackground(); else syncNormalBackground();
-    window.updateDisplay();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    if (typeof window.initStandard === 'function') window.initStandard();
-    const mc = document.getElementById('modeSwitch');
-    const no = document.getElementById('noteOptions');
-    if (mc && no) no.style.display = mc.checked ? 'block' : 'none';
-  });
-
-  (function() {
-    const OriginalImage = window.Image;
-    window.Image = function() {
-        const img = new OriginalImage();
-        const originalSet = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src').set;
-        Object.defineProperty(img, 'src', {
-            set: function(value) {
-                if (value && typeof value === 'string' && value.includes('assets/image/bs/')) {
-                    value = value.split('?')[0] + '?v=' + new Date().getTime();
-                }
-                originalSet.call(this, value);
-            }
-        });
-        return img;
-    };
-  })();
-</script>
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
@@ -496,7 +453,7 @@
                 }
 
                 document.body.style.display = 'block';
-                
+    
                 if (typeof window.updateDisplay === 'function') {
                     window.updateDisplay();
                 }
