@@ -371,17 +371,16 @@
         const mc = document.getElementById('modeSwitch');
         const no = document.getElementById('noteOptions');
         if (!mc || !no) return;
-        
         no.style.display = mc.checked ? 'block' : 'none';
-        
         if(mc.checked) {
-            syncNoteBackground(); 
+            syncNoteBackground();
         } else {
             syncNormalBackground();
         }
-        
         if (typeof window.updateDisplay === 'function') {
             window.updateDisplay();
+        } else {
+            console.warn("ยังไม่ได้โหลดฟังก์ชัน updateDisplay");
         }
     }
 </script>
@@ -450,49 +449,67 @@
 
     onAuthStateChanged(auth, (user) => {
         if (!user) {
+            console.log("No user found, redirecting...");
             window.location.replace('https://hy-c9.github.io/Slip-H2o-login.net/');
-        } else {
-            const userRef = doc(db, "users", user.uid);
-            onSnapshot(userRef, async (docSnap) => {
-                if (docSnap.exists()) {
-                    const data = docSnap.data();
-                    const localSession = localStorage.getItem('currentSessionId');
+            return;
+        } 
+        
+        console.log("User logged in:", user.email);
+        const emailElem = document.getElementById('userEmailDisplay');
+        if (emailElem) emailElem.innerText = user.email;
 
-                    // 🎯 อัปเดตเงื่อนไขเช็คโหมดการแชร์บัญชีที่นี่
-                    if (!data.allowMultiSession && localSession && data.currentSessionId && data.currentSessionId !== localSession) {
-                        alert("⚠️ มีการล็อคอินซ้อน กำลังออกจากระบบ..");
-                        await signOut(auth);
-                        window.location.replace('https://hy-c9.github.io/Slip-H2o-login.net/');
-                        return;
-                    }
-
-                    const now = new Date();
-                    const expiryDate = (data.expiredAt && typeof data.expiredAt.toDate === 'function') 
-                                       ? data.expiredAt.toDate() 
-                                       : new Date(data.expiredAt);
-
-                    if (data.status !== 'active' || now > expiryDate) {
-                        await signOut(auth);
-                        window.location.replace('https://hy-c9.github.io/Slip-H2o-login.net/');
-                        return;
-                    }
-
-                    const diffMs = expiryDate - now;
-                    const diffDays = Math.max(0, Math.floor(diffMs / (1000 * 60 * 60 * 24)));
-                    const diffHours = Math.max(0, Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-                    
-                    const timeLeftElem = document.getElementById('timeLeftDisplay');
-                    if(timeLeftElem) {
-                        timeLeftElem.innerText = `${diffDays} วัน ${diffHours} ชม.`;
-                    }
-
-                    document.body.style.display = 'block';
-                } else {
+        const userRef = doc(db, "users", user.uid);
+        onSnapshot(userRef, async (docSnap) => {
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                const localSession = localStorage.getItem('currentSessionId');
+                if (data.allowMultiSession === false && localSession && data.currentSessionId && data.currentSessionId !== localSession) {
+                    alert("⚠️ มีการล็อคอินซ้อน กำลังออกจากระบบ..");
                     await signOut(auth);
                     window.location.replace('https://hy-c9.github.io/Slip-H2o-login.net/');
+                    return;
                 }
-            });
-        }
+
+                const now = new Date();
+                let expiryDate = new Date();
+                
+                if (data.expiredAt) {
+                    expiryDate = (typeof data.expiredAt.toDate === 'function') 
+                                    ? data.expiredAt.toDate() 
+                                    : new Date(data.expiredAt);
+                }
+
+                if (data.status !== 'active' || now > expiryDate) {
+                    console.log("Account inactive or expired.");
+                    await signOut(auth);
+                    window.location.replace('https://hy-c9.github.io/Slip-H2o-login.net/');
+                    return;
+                }
+
+                const diffMs = expiryDate - now;
+                const diffDays = Math.max(0, Math.floor(diffMs / (1000 * 60 * 60 * 24)));
+                const diffHours = Math.max(0, Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+                
+                const timeLeftElem = document.getElementById('timeLeftDisplay');
+                if(timeLeftElem) {
+                    timeLeftElem.innerText = `${diffDays} วัน ${diffHours} ชม.`;
+                }
+
+                document.body.style.display = 'block';
+                
+                if (typeof window.updateDisplay === 'function') {
+                    window.updateDisplay();
+                }
+
+            } else {
+                console.log("User document does not exist in Firestore.");
+                await signOut(auth);
+                window.location.replace('https://hy-c9.github.io/Slip-H2o-login.net/');
+            }
+        }, (error) => {
+            console.error("Error listening to Firestore:", error);
+            window.location.replace('https://hy-c9.github.io/Slip-H2o-login.net/');
+        });
     });
 
     window.logoutApp = () => {
