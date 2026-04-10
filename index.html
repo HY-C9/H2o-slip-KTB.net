@@ -91,13 +91,13 @@
 <div class="slip-shell">
   <aside class="slip-sidebar">
     <div class="sidebar-brand text-center">
-      <img src="../assets/image/logo1/logo-h2o.png alt="Slip H2O">
+      <img src="assets/image/logo1/logo-h2o.png" alt="Slip H2O">
     </div>
     <nav class="sidebar-menu">
       <a href="https://hy-c9.github.io/Slip-H2o-menu.net/" class="sidebar-link"><i class="bi bi-grid-1x2-fill"></i> หน้าแรก</a>
       <a href="https://hy-c9.github.io/H2o-slip-kbank.net/" class="sidebar-link"><img src="assets/image/logo1/p-kbank.png" class="sidebar-icon-img"> สลิป กสิกรไทย</a>
       <a href="https://hy-c9.github.io/H2o-slip-SCB.net/" class="sidebar-link"><img src="assets/image/logo1/p-scb.png" class="sidebar-icon-img"> สลิป ไทยพาณิชย์</a>
-      <a href="https://hy-c9.github.io/H2o-slip-KTB.net/" class="sidebar-link active"><img src="../assets/image/logo1/p-kt.png" style="width: 22px; margin-right: 5px;"> สลิป กรุงไทย</a>
+      <a href="https://hy-c9.github.io/H2o-slip-KTB.net/" class="sidebar-link active"><img src="assets/image/logo1/p-kt.png" class="sidebar-icon-img"> สลิป กรุงไทย</a>
       <a href="slip_bay.html" class="sidebar-link"><img src="assets/image/logo1/p-kung.png" class="sidebar-icon-img"> สลิป กรุงศรี</a>
       <a href="slip_bbl.html" class="sidebar-link"><img src="assets/image/logo1/p-bl.png" class="sidebar-icon-img"> สลิป กรุงเทพ</a>
       <a href="slip_ttb.html" class="sidebar-link"><img src="assets/image/logo1/p-ttb.png" class="sidebar-icon-img"> สลิป TTB</a>
@@ -128,9 +128,9 @@
       
       <div class="d-flex align-items-center gap-3">
         <div class="d-none d-md-flex align-items-center" style="background: var(--item-bg); border: 1px solid var(--card-border); border-radius: 50rem; padding: 6px 16px; gap: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <i class="bi bi-laptop" style="font-size: 1.2rem; color: #38bdf8;"></i>
+            <i class="bi bi-hourglass-split" style="font-size: 1.2rem; color: #f59e0b;"></i>
             <div class="d-flex flex-column text-start" style="line-height: 1.1;">
-                <span style="font-size: 0.7rem; color: var(--text-muted);">สถานะระบบ</span>
+                <span style="font-size: 0.7rem; color: var(--text-muted);">เวลาใช้งานคงเหลือ</span>
                 <span class="fw-bold" id="timeLeftDisplay" style="font-size: 0.85rem; color: var(--text-main);">กำลังโหลดข้อมูล...</span>
             </div>
         </div>
@@ -191,7 +191,7 @@
                         <label for="receivername" class="form-label text-primary">ผู้รับโอน</label>
                         <input type="text" class="form-control mb-2" id="receivername" value="นาย กบ เขียด" oninput="updateDisplay()">
                         <input type="text" class="form-control mb-2" id="receiveraccount" value="XXX-X-XX142-6" oninput="updateDisplay()">
-                        <select class="form-select" id="bank" onchange="autoFormatAccount(); updateDisplay()">`
+                        <select class="form-select" id="bank" onchange="updateDisplay()">
                             <option value="กสิกรไทย">ธ.กสิกรไทย</option>
                             <option value="กรุงไทย">ธ.กรุงไทย</option>
                             <option value="กรุงเทพ">ธ.กรุงเทพ</option>
