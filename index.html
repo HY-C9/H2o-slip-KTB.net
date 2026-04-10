@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KTB สร้างสลิป กรุงไทย - Slip System Premium</title>
+    <title>KTB สร้างสลิป กรุงไทย </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="icon" href="assets/image/icon/KTB.png" type="image/png">
+    <link rel="icon" href="assets/image/logo1/p-kt.png" type="image/png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
         
         :root {
+            /* โทนสีมืดพื้นฐาน */
             --bg-main: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             --sidebar-bg: rgba(15, 23, 42, 0.6);
             --card-bg: rgba(255, 255, 255, 0.03);
@@ -18,6 +19,7 @@
             --text-main: #ffffff; 
             --text-muted: #cbd5e1;
             
+            /* สีเฉพาะของกรุงไทย */
             --ktb-blue: #00a2e8;
             --ktb-blue-hover: #0084be;
             
@@ -85,9 +87,7 @@
         .alert-custom { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #fbbf24; border-radius: 8px; padding: 6px 12px; font-size: 0.75rem; margin-bottom: 10px; }
     </style>
 </head>
-
 <body style="display: none;">
-
 <div class="slip-shell">
   <aside class="slip-sidebar">
     <div class="sidebar-brand text-center">
@@ -109,16 +109,12 @@
       <a href="slip_make.html" class="sidebar-link"><img src="assets/image/logo1/p-make.png" class="sidebar-icon-img"> สลิป MAKE</a>
     </nav>
     <div class="mt-auto pb-3 pt-4 px-3">
-        <div class="user-info text-center mb-3 p-2" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px;">
-            <span style="font-size: 0.7rem; color: var(--text-muted);">เข้าสู่ระบบโดย:</span><br>
-            <span id="userEmailDisplay" class="fw-bold" style="font-size: 0.8rem; color: var(--ktb-blue); word-break: break-all;">กำลังตรวจสอบ...</span>
-        </div>
-        <a href="#" class="btn btn-outline-danger btn-sm w-100 rounded-pill mb-2 py-2 fw-medium d-flex justify-content-center align-items-center">
-            <i class="bi bi-headset me-1"></i> ติดต่อผู้ดูแลระบบ
-        </a>
-        <a href="#" onclick="window.logoutApp()" class="btn btn-theme-super btn-sm w-100 rounded-pill py-2 fw-medium d-flex justify-content-center align-items-center">
-            <i class="bi bi-box-arrow-right me-1"></i> ออกจากระบบ
-        </a>
+      <a href="#" class="btn btn-outline-danger btn-sm w-100 rounded-pill mb-2 py-2 fw-medium d-flex justify-content-center align-items-center">
+        <i class="bi bi-headset me-1"></i> ติดต่อผู้ดูแลระบบ
+      </a>
+      <a href="#" onclick="logoutApp()" class="btn btn-theme-super btn-sm w-100 rounded-pill py-2 fw-medium d-flex justify-content-center align-items-center">
+        <i class="bi bi-box-arrow-right me-1"></i> ออกจากระบบ
+      </a>
     </div>
   </aside>
 
@@ -134,8 +130,8 @@
         <div class="d-none d-md-flex align-items-center" style="background: var(--item-bg); border: 1px solid var(--card-border); border-radius: 50rem; padding: 6px 16px; gap: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
             <i class="bi bi-laptop" style="font-size: 1.2rem; color: #38bdf8;"></i>
             <div class="d-flex flex-column text-start" style="line-height: 1.1;">
-                <span style="font-size: 0.7rem; color: var(--text-muted);">สถานะระบบ (เวลาคงเหลือ)</span>
-                <span id="timeLeftDisplay" class="fw-bold" style="font-size: 0.85rem; color: var(--text-main);">กำลังตรวจสอบ...</span>
+                <span style="font-size: 0.7rem; color: var(--text-muted);">สถานะระบบ</span>
+                <span class="fw-bold" id="timeLeftDisplay" style="font-size: 0.85rem; color: var(--text-main);">กำลังโหลดข้อมูล...</span>
             </div>
         </div>
 
@@ -153,9 +149,9 @@
                 XXX-X-XX000-0 ㅤㅤㅤㅤ(10ตัว)<br>
                 XXX-X-XXXX0-000 ㅤㅤㅤㅤ(12ตัว)<br>
                 XXX XXX 0000 ㅤㅤㅤㅤ(พร้อมเพย์เบอร์)<br>
-                (พร้อมเพย์บัตรประชาชน)<br>X XXXX XXXX0 00 0 <br>
-                (พร้อมเพย์วอลเล็ท)<br>XXX-XXXXXXXX-0000<br>
-                (ChillPay)<br>(010553509091216)<br>
+                X XXXX XXXX0 00 0 ㅤㅤㅤㅤ(พร้อมเพย์บัตรประชาชน)<br>
+                XXX-XXXXXXXX-0000ㅤㅤㅤㅤ(พร้อมเพย์วอลเล็ท)<br>
+                (010553509091216)ㅤㅤㅤㅤ(ChillPay)<br>
             </div>
 
             <div class="form-section-card">
@@ -195,7 +191,7 @@
                         <label for="receivername" class="form-label text-primary">ผู้รับโอน</label>
                         <input type="text" class="form-control mb-2" id="receivername" value="นาย กบ เขียด" oninput="updateDisplay()">
                         <input type="text" class="form-control mb-2" id="receiveraccount" value="XXX-X-XX142-6" oninput="updateDisplay()">
-                        <select class="form-select" id="bank" onchange="autoFormatAccount(); updateDisplay()">
+                        <select class="form-select" id="bank" onchange="updateDisplay()">
                             <option value="กสิกรไทย">ธ.กสิกรไทย</option>
                             <option value="กรุงไทย">ธ.กรุงไทย</option>
                             <option value="กรุงเทพ">ธ.กรุงเทพ</option>
@@ -391,7 +387,49 @@
 </script>
 
 <script src="js/slipktb5.js"></script>
+<script>
+  window.updateDisplay = function() {
+    const mc = document.getElementById('modeSwitch');
+    if (mc && mc.checked) {
+      if (typeof window.updateDisplayNote === 'function') window.updateDisplayNote();
+    } else {
+      if (typeof window.updateDisplayStandard === 'function') window.updateDisplayStandard();
+    }
+  };
 
+  function toggleMode() {
+    const mc = document.getElementById('modeSwitch');
+    const no = document.getElementById('noteOptions');
+    if (!mc || !no) return;
+    no.style.display = mc.checked ? 'block' : 'none';
+    if(mc.checked) syncNoteBackground(); else syncNormalBackground();
+    window.updateDisplay();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof window.initStandard === 'function') window.initStandard();
+    const mc = document.getElementById('modeSwitch');
+    const no = document.getElementById('noteOptions');
+    if (mc && no) no.style.display = mc.checked ? 'block' : 'none';
+  });
+
+  (function() {
+    const OriginalImage = window.Image;
+    window.Image = function() {
+        const img = new OriginalImage();
+        const originalSet = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src').set;
+        Object.defineProperty(img, 'src', {
+            set: function(value) {
+                if (value && typeof value === 'string' && value.includes('assets/image/bs/')) {
+                    value = value.split('?')[0] + '?v=' + new Date().getTime();
+                }
+                originalSet.call(this, value);
+            }
+        });
+        return img;
+    };
+  })();
+</script>
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
@@ -414,15 +452,13 @@
         if (!user) {
             window.location.replace('https://hy-c9.github.io/Slip-H2o-login.net/');
         } else {
-            const emailElem = document.getElementById('userEmailDisplay');
-            if (emailElem) emailElem.innerText = user.email;
-
             const userRef = doc(db, "users", user.uid);
             onSnapshot(userRef, async (docSnap) => {
                 if (docSnap.exists()) {
                     const data = docSnap.data();
                     const localSession = localStorage.getItem('currentSessionId');
 
+                    // 🎯 อัปเดตเงื่อนไขเช็คโหมดการแชร์บัญชีที่นี่
                     if (!data.allowMultiSession && localSession && data.currentSessionId && data.currentSessionId !== localSession) {
                         alert("⚠️ มีการล็อคอินซ้อน กำลังออกจากระบบ..");
                         await signOut(auth);
@@ -449,6 +485,7 @@
                     if(timeLeftElem) {
                         timeLeftElem.innerText = `${diffDays} วัน ${diffHours} ชม.`;
                     }
+
                     document.body.style.display = 'block';
                 } else {
                     await signOut(auth);
@@ -465,5 +502,25 @@
     };
 </script>
 
+<script>
+    function autoFormatAccount() {
+        const bank = document.getElementById('bank').value;
+        const accInput = document.getElementById('receiveraccount');
+        
+        if (bank === 'ออมสิน' || bank === 'ธ.ก.ส.') {
+            accInput.value = 'XXX-X-XXXX0-000';
+        } else if (bank === 'พร้อมเพย์' || bank === 'พร้อมเพย์(เบอร์)') {
+            accInput.value = 'XXX XXX 0000';
+        } else if (bank === 'พร้อมเพย์ ' || bank === 'พร้อมเพย์(บัตรประชาชน)') {
+            accInput.value = 'X XXXX XXXX0 00 0';
+        } else if (bank === 'พร้อมเพย์  ' || bank === 'พร้อมเพย์วอลเล็ท') {
+            accInput.value = 'XXX-XXXXXXXX-0000';
+        } else if (bank === 'ChillPay') {
+            accInput.value = '010553509091216';
+        } else {
+            accInput.value = 'XXX-X-XX000-0';
+        }
+    }
+</script>
 </body>
 </html>
