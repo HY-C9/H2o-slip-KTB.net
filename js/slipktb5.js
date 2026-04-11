@@ -1,10 +1,10 @@
 function loadFonts() {
     const fonts = [
-        new FontFace('DXKrungthaiBold', 'url(../assets/fonts/DX-Krungthai-Bold.woff)'),
-        new FontFace('DXKrungthaiMedium', 'url(../assets/fonts/DX-Krungthai-Medium.woff)'),
-        new FontFace('DXKrungthaiRegular', 'url(../assets/fonts/DX-Krungthai-Regular.woff)'),
-        new FontFace('DXKrungthaiSemiBold', 'url(../assets/fonts/DX-Krungthai-SemiBold.woff)'),
-        new FontFace('DXKrungthaiThin', 'url(../assets/fonts/DX-Krungthai-Thin.woff)')
+        new FontFace('DXKrungthaiBold', 'url(assets/fonts/DX-Krungthai-Bold.woff)'),
+        new FontFace('DXKrungthaiMedium', 'url(assets/fonts/DX-Krungthai-Medium.woff)'),
+        new FontFace('DXKrungthaiRegular', 'url(assets/fonts/DX-Krungthai-Regular.woff)'),
+        new FontFace('DXKrungthaiSemiBold', 'url(assets/fonts/DX-Krungthai-SemiBold.woff)'),
+        new FontFace('DXKrungthaiThin', 'url(assets/fonts/DX-Krungthai-Thin.woff)')
     ];
 
     return Promise.all(fonts.map(font => font.load())).then(function(loadedFonts) {
@@ -81,87 +81,87 @@ function updateDisplay() {
     switch (bank) {
         case 'กสิกรไทย':
             bankText = 'กสิกรไทย';
-            bankLogoUrl = '../assets/image/logo/KBANK1.png';
+            bankLogoUrl = 'assets/image/logo/KBANK1.png';
             break;
         case 'กรุงไทย':
             bankText = 'กรุงไทย';
-            bankLogoUrl = '../assets/image/logo/KTB3.png';
+            bankLogoUrl = 'assets/image/logo/KTB3.png';
             break;
         case 'กรุงเทพ':
             bankText = 'กรุงเทพ';
-            bankLogoUrl = '../assets/image/logo/BBL3.png';
+            bankLogoUrl = 'assets/image/logo/BBL3.png';
             break;
         case 'ไทยพาณิชย์':
             bankText = 'ไทยพาณิชย์';
-            bankLogoUrl = '../assets/image/logo/SCB.png';
+            bankLogoUrl = 'assets/image/logo/SCB.png';
             break;
         case 'กรุงศรี':
             bankText = 'กรุงศรี';
-            bankLogoUrl = '../assets/image/logo/BAY2.png';
+            bankLogoUrl = 'assets/image/logo/BAY2.png';
             break;
         case 'ทีเอ็มบีธนชาต':
             bankText = 'ทีเอ็มบีธนชาต';
-            bankLogoUrl = '../assets/image/logo/TTB.png';
+            bankLogoUrl = 'assets/image/logo/TTB.png';
             break;
         case 'ออมสิน':
             bankText = 'ออมสิน';
-            bankLogoUrl = '../assets/image/logo/O2.png';
+            bankLogoUrl = 'assets/image/logo/O2.png';
             break;
         case 'ธ.ก.ส.':
             bankText = 'ธ.ก.ส.';
-            bankLogoUrl = '../assets/image/logo/T1.png';
+            bankLogoUrl = 'assets/image/logo/T1.png';
             break;
         case 'ธ.อ.ส.':
             bankText = 'ธ.อ.ส.';
-            bankLogoUrl = '../assets/image/logo/C2.png';
+            bankLogoUrl = 'assets/image/logo/C2.png';
             break;
         case 'เกียรตินาคินภัทร':
             bankText = 'เกียรตินาคินภัทร';
-            bankLogoUrl = '../assets/image/logo/K.png';
+            bankLogoUrl = 'assets/image/logo/K.png';
             break;
         case 'ซีไอเอ็มบี':
             bankText = 'ซีไอเอ็มบี';
-            bankLogoUrl = '../assets/image/logo/C-CIMB.png';
+            bankLogoUrl = 'assets/image/logo/C-CIMB.png';
             break;
         case 'ยูโอบี':
             bankText = 'ยูโอบี';
-            bankLogoUrl = '../assets/image/logo/UOB2.png';
+            bankLogoUrl = 'assets/image/logo/UOB2.png';
             break;
         case 'แลนด์ แอนด์ เฮ้าส์':
             bankText = 'แลนด์ แอนด์ เฮ้าส์';
-            bankLogoUrl = '../assets/image/logo/LHBANK.png';
+            bankLogoUrl = 'assets/image/logo/LHBANK.png';
             break;
         case 'ไอซีบีซี':
             bankText = 'ไอซีบีซี';
-            bankLogoUrl = '../assets/image/logo/ICBC.png';
+            bankLogoUrl = 'assets/image/logo/ICBC.png';
             break;
         case 'พร้อมเพย์':
             bankText = 'พร้อมเพย์';
-            bankLogoUrl = '../assets/image/logo/P-Krungthai1.png';
+            bankLogoUrl = 'assets/image/logo/P-Krungthai1.png';
             break;
         case 'พร้อมเพย์ ':
             bankText = 'พร้อมเพย์';
-            bankLogoUrl = '../assets/image/logo/P-Krungthai2.png';
+            bankLogoUrl = 'assets/image/logo/P-Krungthai2.png';
             break;
         case 'พร้อมเพย์  ':
             bankText = 'พร้อมเพย์';
-            bankLogoUrl = '../assets/image/logo/P-Krungthai.png';
+            bankLogoUrl = 'assets/image/logo/P-Krungthai.png';
             break;
         case 'ChillPay':
             bankText = 'ChillPay';
-            bankLogoUrl = '../assets/image/logo/CP-KTB.png'; 
+            bankLogoUrl = 'assets/image/logo/CP-KTB.png'; 
             break;
          case 'SCB มณี SHOP':
             bankText = 'SCB มณี SHOP';
-            bankLogoUrl = '../assets/image/logo/CP-KTB.png'; 
+            bankLogoUrl = 'assets/image/logo/CP-KTB.png'; 
             break;
         case 'MetaAds1':
             bankText = 'MetaAds1';
-            bankLogoUrl = '../assets/image/logo/Meta4.png'; 
+            bankLogoUrl = 'assets/image/logo/Meta4.png'; 
             break;
         case 'MetaAds2':
             bankText = 'MetaAds2';
-            bankLogoUrl = '../assets/image/logo/Meta4.png'; 
+            bankLogoUrl = 'assets/image/logo/Meta4.png'; 
             break;
     }
 
@@ -244,7 +244,7 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 868.8,972.3,52.50, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`,942.9, 1046,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
+                    drawImage(ctx, 'assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
                     drawText(ctx, `${AideMemoire}`,942.9, 1183,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 1, 0, 0, 800, -1.5);
 
                 } else if (bank === 'SCB มณี SHOP') {
@@ -263,7 +263,7 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 868.8,972.3,52.50, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`,942.9, 1046,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
+                    drawImage(ctx, 'assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
                     drawText(ctx, `${AideMemoire}`,942.9, 1183,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 1, 0, 0, 800, -1.5);
                     
                 } else if (bank === 'MetaAds1') {
@@ -281,7 +281,7 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 868.8,972.3,52.50, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`,942.9, 1046,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
+                    drawImage(ctx, 'assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
                     drawText(ctx, `${AideMemoire}`,942.9, 1183,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 1, 0, 0, 800, -1.5);
                 
                 } else if (bank === 'MetaAds2') {
@@ -300,7 +300,7 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 868.8,972.3,52.50, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`,942.9, 1046,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
+                    drawImage(ctx, 'assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
                     drawText(ctx, `${AideMemoire}`,942.9, 1183,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 1, 0, 0, 800, -1.5);
                     
                 } else {
@@ -318,11 +318,11 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 868.8,972.3,52.50, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`,942.9, 1046,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
+                    drawImage(ctx, 'assets/image/logo/KTB3.png', 31,389, 117.5, 117.5);  
                     drawText(ctx, `${AideMemoire}`,942.9, 1183,39, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 1, 0, 0, 800, -1.5);
                 }
 
-                if (selectedImage && selectedImage !== '../assets/image/st/NO.png') {
+                if (selectedImage && selectedImage !== 'assets/image/st/NO.png') {
                     const customImage = new Image();
                     customImage.src = selectedImage;
                     customImage.onload = function() {
@@ -351,7 +351,7 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 883.5, 1025.7,56.80, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`, 963.7, 1104.0,41.50, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png',31.2,406,126.5,126.5);         
+                    drawImage(ctx, 'assets/image/logo/KTB3.png',31.2,406,126.5,126.5);         
                     
                 } else if (bank === 'SCB มณี SHOP') {
                     ctx.drawImage(bankLogo, 31.2,618.5,126.5,126.5); 
@@ -369,7 +369,7 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 883.5, 1025.7,56.80, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`, 963.7, 1104.0,41.50, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png',31.2,406,126.5,126.5);
+                    drawImage(ctx, 'assets/image/logo/KTB3.png',31.2,406,126.5,126.5);
 
                 } else if (bank === 'MetaAds1') {
                     ctx.drawImage(bankLogo, 31.2,618.5,126.5,126.5); 
@@ -386,7 +386,7 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 883.5, 1025.7,56.80, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`, 963.7, 1104.0,41.50, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png',31.2,406,126.5,126.5);         
+                    drawImage(ctx, 'assets/image/logo/KTB3.png',31.2,406,126.5,126.5);         
                     
                 } else if (bank === 'MetaAds2') {
                     ctx.drawImage(bankLogo, 31.2,618.5,126.5,126.5); 
@@ -404,7 +404,7 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 883.5, 1025.7,56.80, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`, 963.7, 1104.0,41.50, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png',31.2,406,126.5,126.5);  
+                    drawImage(ctx, 'assets/image/logo/KTB3.png',31.2,406,126.5,126.5);  
                 
                 } else {
                     ctx.drawImage(bankLogo, 31.2,684.5,126.5,126.5); 
@@ -421,11 +421,11 @@ function updateDisplay() {
                     drawText(ctx, `${amount11}`, 883.5, 1025.7,56.80, 'DXKrungthaiBold', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `0.00 บาท`, 963.7, 1104.0,41.50, 'DXKrungthaiMedium', '#000000', 'right', 1.5, 3, 0, 0, 500, -1.5);
                     drawText(ctx, `${QRCode}`, 238.9, 599.0,33, 'DXKrungthaiMedium', '#4e4e4e', 'left', 1.5, 5, 0, 0, 500, 0);
-                    drawImage(ctx, '../assets/image/logo/KTB3.png',31.2,406,126.5,126.5);  
+                    drawImage(ctx, 'assets/image/logo/KTB3.png',31.2,406,126.5,126.5);  
                 }
 
                 // สติ๊กเกอร์ (แบบปกติ)
-                if (selectedImage && selectedImage !== '../assets/image/st/NO.png') {
+                if (selectedImage && selectedImage !== 'assets/image/st/NO.png') {
                     const customImage = new Image();
                     customImage.src = selectedImage;
                     customImage.onload = function() {
