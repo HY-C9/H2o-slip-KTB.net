@@ -531,3 +531,35 @@ function drawImage(ctx, imageUrl, x, y, width, height) {
         ctx.drawImage(image, x, y, width, height);
     };
 }
+// ==========================================
+// สคริปต์เปลี่ยนรูปแบบเลขบัญชีผู้รับอัตโนมัติ
+// ==========================================
+function autoFormatAccount() {
+    const bank = document.getElementById('bank').value;
+    const accInput = document.getElementById('receiveraccount');
+    
+    // ออมสิน และ ธ.ก.ส. (12 ตัว)
+    if (bank === 'ออมสิน' || bank === 'ธ.ก.ส.') {
+        accInput.value = 'XXX-X-XXXX0-000';
+    } 
+    // พร้อมเพย์เบอร์ (อิงจาก value="พร้อมเพย์")
+    else if (bank === 'พร้อมเพย์') {
+        accInput.value = 'XXX XXX 0000';
+    } 
+    // พร้อมเพย์บัตรประชาชน (อิงจาก value="พร้อมเพย์ ") มีเคาะวรรค 1 ที
+    else if (bank === 'พร้อมเพย์ ') {
+        accInput.value = 'X XXXX XXXX0 00 0';
+    } 
+    // พร้อมเพย์วอลเล็ท (อิงจาก value="พร้อมเพย์  ") มีเคาะวรรค 2 ที
+    else if (bank === 'พร้อมเพย์  ') {
+        accInput.value = 'XXX-XXXXXXXX-0000';
+    } 
+    // ChillPay
+    else if (bank === 'ChillPay') {
+        accInput.value = '010553509091216';
+    } 
+    // ธนาคารอื่นๆ ทั่วไป (10 ตัว)
+    else {
+        accInput.value = 'XXX-X-XX000-0';
+    }
+}
